@@ -1,0 +1,5 @@
+<?php
+
+define ( 'EGV_STR_DB_USER_DETAIL',          'Unable to retrieve user detail'            );
+
+?>
