@@ -3,8 +3,11 @@ SET NAMES utf8;
 SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 
+
 CREATE TABLE IF NOT EXISTS `egv_user` (
-  `user_UUID` char(52) CHARACTER SET ascii NOT NULL,
-  `user_Favourite_Colour` varchar(64) NOT NULL
+  `id` int(11) UNSIGNED,
+  `favourite_colour` varchar(64) NOT NULL,
+  `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

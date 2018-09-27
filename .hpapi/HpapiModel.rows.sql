@@ -6,33 +6,33 @@ SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
 
-INSERT IGNORE INTO `hpapi_call` (`call_Model`, `call_Spr`, `call_Vendor`, `call_Package`, `call_Class`, `call_Method`) VALUES
+INSERT IGNORE INTO `hpapi_call` (`model`, `spr`, `vendor`, `package`, `class`, `method`) VALUES
 ('ExampleVendor',	'egvUserDetail',	'eg-vendor',	'eg-server',	'\\Egv\\EgServer',	'getUserDetail');
 
-INSERT IGNORE INTO `hpapi_method` (`method_Vendor`, `method_Package`, `method_Class`, `method_Method`, `method_Label`, `method_Notes`) VALUES
+INSERT IGNORE INTO `hpapi_method` (`vendor`, `package`, `class`, `method`, `label`, `notes`) VALUES
 ('eg-vendor',	'eg-server',	'\\Egv\\EgServer',	'getUserDetail',	'My details',	'eg-vendor details for this user.');
 
-INSERT IGNORE INTO `hpapi_methodarg` (`methodarg_Vendor`, `methodarg_Package`, `methodarg_Class`, `methodarg_Method`, `methodarg_Argument`, `methodarg_Name`, `methodarg_Empty_Allowed`, `methodarg_Pattern`) VALUES
+INSERT IGNORE INTO `hpapi_methodarg` (`vendor`, `package`, `class`, `method`, `argument`, `name`, `empty_allowed`, `pattern`) VALUES
 ('eg-vendor',	'eg-server',	'\\Egv\\EgServer',	'getUserDetail',	1,	'User UUID',	0,	'uuid-hpapi');
 
-INSERT IGNORE INTO `hpapi_model` (`model_Model`, `model_Notes`, `model_DSN`, `model_Usr`, `model_Pwd`) VALUES
-('ExampleVendor',	'Model for eg-vendor.',	'mysql:host=localhost;dbname=egvendor;port=3306;charset=utf8',	'hpapi',	'abc');
+INSERT IGNORE INTO `hpapi_model` (`model`, `notes`) VALUES
+('ExampleVendor',	'Model for eg-vendor.');
 
-INSERT IGNORE INTO `hpapi_package` (`package_Vendor`, `package_Package`, `package_Notes`) VALUES
+INSERT IGNORE INTO `hpapi_package` (`vendor`, `package`, `notes`) VALUES
 ('eg-vendor',	'eg-server',	'eg-server API package.');
 
-INSERT IGNORE INTO `hpapi_run` (`run_Usergroup`, `run_Vendor`, `run_Package`, `run_Class`, `run_Method`) VALUES
+INSERT IGNORE INTO `hpapi_run` (`usergroup`, `vendor`, `package`, `class`, `method`) VALUES
 ('anon',	'eg-vendor',	'eg-server',	'\\Egv\\EgServer',	'getUserDetail');
 
-INSERT IGNORE INTO `hpapi_spr` (`spr_Model`, `spr_Spr`, `spr_Notes`) VALUES
+INSERT IGNORE INTO `hpapi_spr` (`model`, `spr`, `notes`) VALUES
 ('ExampleVendor',	'egvUserDetail',	'User data for a primary UUID.');
 
-INSERT IGNORE INTO `hpapi_sprarg` (`sprarg_Model`, `sprarg_Spr`, `sprarg_Argument`, `sprarg_Name`, `sprarg_Empty_Allowed`, `sprarg_Pattern`) VALUES
-('ExampleVendor',	'egvUserDetail'	1,	'User UUID',	0,	'uuid-hpapi');
+INSERT IGNORE INTO `hpapi_sprarg` (`model`, `spr`, `argument`, `name`, `empty_allowed`, `pattern`) VALUES
+('ExampleVendor',	'egvUserDetail',	1,	'User ID',	0,	'int-11-unsigned');
 
-INSERT IGNORE INTO `hpapi_usergroup` (`usergroup_Usergroup`, `usergroup_Level`, `usergroup_Name`, `usergroup_Notes`) VALUES
+INSERT IGNORE INTO `hpapi_usergroup` (`usergroup`, `level`, `name`, `notes`) VALUES
 ('example',	100000,	'User of eg-vendor',	'Public user registered with eg-vendor');
 
-INSERT IGNORE INTO `hpapi_membership` (`membership_User_UUID`, `membership_Usergroup`) VALUES
-('20180720110427::57d2eff7-8ff3-11e8-902b-001f16148bc1',	'example');
+INSERT IGNORE INTO `hpapi_membership` (`user_id`, `usergroup`) VALUES
+('1',	'example');
 

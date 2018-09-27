@@ -8,14 +8,14 @@ DELIMITER $$
 
 DROP PROCEDURE IF EXISTS `egvUserDetail`$$
 CREATE PROCEDURE `egvUserDetail`(
-  IN        `userUUID` CHAR(52) CHARSET ascii
+  IN        `userID` INT(11) UNSIGNED
 )
 BEGIN
   SELECT
-    `user_UUID` AS `uuid`
-   ,`user_Favourite_Colour` AS `favouriteColour`
+    `id` AS `id`
+   ,`favourite_colour` AS `favouriteColour`
   FROM `egv_user`
-  WHERE `user_UUID`=userUUID
+  WHERE `id`=userID
   LIMIT 0,1
   ;
 END$$
