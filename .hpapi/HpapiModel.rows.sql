@@ -27,7 +27,7 @@ INSERT IGNORE INTO `hpapi_run` (`usergroup`, `vendor`, `package`, `class`, `meth
 INSERT IGNORE INTO `hpapi_spr` (`model`, `spr`, `notes`) VALUES
 ('ExampleVendor',	'egvUserDetail',	'User data for a primary UUID.');
 
-INSERT IGNORE INTO `hpapi_sprarg` (`model`, `spr`, `argument`, `name`, `empty_allowed`, `pattern``) VALUES
+INSERT IGNORE INTO `hpapi_sprarg` (`model`, `spr`, `argument`, `name`, `empty_allowed`, `pattern`) VALUES
 ('ExampleVendor',	'egvUserDetail',	1,	'User ID',	0,	'int-11-positive');
 
 INSERT IGNORE INTO `hpapi_usergroup` (`usergroup`, `level`, `name`, `notes`) VALUES
